@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 15% 7%;
+    --foreground: 210 20% 90%;
+
+    --card: 225 15% 10%;
+    --card-foreground: 210 20% 90%;
+
+    --popover: 225 15% 10%;
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 185 70% 50%;
+    --primary-foreground: 225 15% 7%;
+
+    --secondary: 225 15% 15%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 225 12% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 225 15% 18%;
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 12% 18%;
+    --input: 225 12% 18%;
+    --ring: 185 70% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 225 15% 9%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 185 70% 50%;
+    --sidebar-primary-foreground: 225 15% 7%;
+    --sidebar-accent: 225 15% 14%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 225 12% 16%;
+    --sidebar-ring: 185 70% 50%;
+
+    /* Language accent colors */
+    --lang-java: 30 90% 55%;
+    --lang-python: 210 60% 50%;
+    --lang-c: 215 15% 55%;
+    --lang-cpp: 230 55% 55%;
+
+    /* AI assistant */
+    --ai-glow: 185 80% 55%;
+    --ai-surface: 225 20% 12%;
+
+    /* Code block */
+    --code-bg: 225 18% 8%;
+    --code-header: 225 15% 12%;
+    --code-border: 225 12% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Glow effect for AI */
+.ai-glow {
+  box-shadow: 0 0 20px hsl(var(--ai-glow) / 0.15), 0 0 60px hsl(var(--ai-glow) / 0.05);
+}
+
+/* Language tab indicators */
+.lang-tab-java { border-color: hsl(var(--lang-java)); }
+.lang-tab-python { border-color: hsl(var(--lang-python)); }
+.lang-tab-c { border-color: hsl(var(--lang-c)); }
+.lang-tab-cpp { border-color: hsl(var(--lang-cpp)); }
